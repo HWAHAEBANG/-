@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  background: url('/image/apartment.jpg');
+  background-size: cover;
+  background-position: center center;
+  width: 100vW;
+  height: 100vh;
+}
+
+
+.transparency {
+  background-color: rgba(0,0,0,0.7);
+  background-position: center center;
+  width: 100vW;
+  height: 100vh;
+}
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; 이걸로 해도 되긴함*/ 
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  font-family: 'East Sea Dokdo', cursive;
+}
+
+.sub-title {
+  position: relative;
+  font-size: 40px;
+  letter-spacing: 9px;
+}
+
+.sub-title::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px; /* 오른쪽에서부터 재니까 마이너스를 붙여줘야한다. */
+  width: 3px;
+  height: 90%;
+  background-color: white;
+}
+
+.sub-title.active::after {
+  display: none;
+}
+
+.title {
+  margin-top: -15px;
+  font-size: 80px;
+  text-shadow: 1px 1px 10px rgba(0,0,0,1);
+}
+
+.title_2 {
+color: #d32f2f;
+}
+
+.log-in {
+  margin-top: 2rem;
+  padding: .5rem 1rem;
+}
