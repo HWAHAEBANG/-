@@ -1,29 +1,48 @@
+::-webkit-scrollbar {
+  display: none;}
+
 * {
   margin: 0;
   padding: 0;
 }
 
-.background {
-  background: url('/image/apartment.jpg');
-  background-size: cover;
-  background-position: center center;
-  width: 100vW;
-  height: 100vh;
+body{
+  width: 500px;
+  height: 80000px;
+  overflow-y: hidden;
 }
 
-
-.transparency {
-  background-color: rgba(0,0,0,0.7);
-  background-position: center center;
-  width: 100vW;
-  height: 100vh;
+.opening {
+position: absolute;
+width: 100%;
+height: 100%;
+background: url('/image/apartment.jpg');
+background-size: cover/center;
+background-repeat: no-repeat;
+transition-duration: 1.5s; 
 }
+
+.opening::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.opening .main .title {
+  transform: none;
+  transition-duration: 1.5s; 
+}
+
+  
+/* 깨달은점 : img태그에는 가상선택자를 담을 수 없다. 닫는 태그가 없는 태그이기 때문 */
 
 
 .main {
   display: flex;
   flex-direction: column;
-  /* text-align: center; 이걸로 해도 되긴함*/ 
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -32,7 +51,40 @@
   transform: translate(-50%,-50%);
   color: #fff;
   font-family: 'East Sea Dokdo', cursive;
+  z-index: 1;
 }
+
+.main > .start {
+  margin-top: 5%;
+  padding: 0 2rem;
+  font-size: 30px;
+  font-family: 'East Sea Dokdo', cursive;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  background: none;
+  color: #fff;
+  transform: none;
+  transition-duration: 1.5s;
+}
+
+/**
+displaynone은 duration이 먹히지 않는 이유!!
+ https://velog.io/@dev-tinkerbell/display-none%EC%9D%B4-transition%EC%9D%B4-%EC%95%88%EB%A8%B9%ED%9E%88%EB%8A%94-%EC%9D%B4%EC%9C%A0 */
+
+.main > .start:hover {
+  background: #fff;
+  color: #d32f2f;
+  transition-duration: .5s;
+}
+
+.sub-title {
+  position: relative;
+  font-size: 40px;
+  letter-spacing: 9px;
+  display: block;
+  height: 6vh;
+}
+
 
 .sub-title {
   position: relative;
@@ -65,7 +117,102 @@
 color: #d32f2f;
 }
 
-.log-in {
-  margin-top: 2rem;
-  padding: .5rem 1rem;
+
+/* 테스트 중 */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#fff ;
+}
+
+#menu {
+  height: 100%;
+  position: fixed;
+  background-color: #d32f2f;
+  width: 300px;
+  transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateX(-100%);
+  left: 60px;
+}
+
+#menu.expanded {
+  transform: translateX(0%);
+  left: 0px;
+}
+
+.menu-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#blob {
+  top: 0;
+  z-index: -1;
+  right: 60px;
+  transform: translateX(100%);
+  height: 100%;
+  position: absolute;
+}
+
+#blob-path {
+  height: 100%;
+  fill:  #d32f2f;
+}
+
+.hamburger {
+  right: 20px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;  
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+}
+
+.hamburger .line:nth-child(2) {
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger .line:nth-child(3) {
+  bottom: 0;
+}
+
+h1 {
+  position: fixed;
+  right: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  width: 80%;
+  margin-left: 10%;
+  position: absolute;
+  top: 10px;
+}
+
+ul li {
+  color: #fff;
+  font-family: sans-serif;
+  padding: 20px 0;
+}
+
+h2 {
+  position: absolute;
+   left: 50%;
+  color: #333;
+  margin: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 100;
 }
