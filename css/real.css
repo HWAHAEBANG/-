@@ -1,49 +1,53 @@
-::-webkit-scrollbar {
-  display: none;}
+/* ::-webkit-scrollbar {
+  display: none;} */
 
 * {
   margin: 0;
   padding: 0;
 }
 
-body{
+
+body {
+  overflow-y: ;
   /* display: flex;
   flex-direction: column; */
+  /* position: absolute; */
   position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  overflow-y: hidden;
+  height: 500vh;
 }
 
+
 .opening {
-position: absolute;
-width: 100vw;
-height: 100vh;
-background: url('/image/apartment.jpg');
-background-size: cover/center;
-background-repeat: no-repeat;
-transition-duration: 1.5s; 
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url('/image/apartment.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+  transition-duration: 1.5s;
 }
 
 .opening::after {
   content: "";
   display: block;
-  position: absolute;
+  /* position: relative;안해도되네 */
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.opening .main .title {
-  transform: none;
-  transition-duration: 1.5s; 
+.opening .text .title {
+  /* transform: none; */
+  transition-duration: 1.5s;
 }
 
-  
-/* 깨달은점 : img태그에는 가상선택자를 담을 수 없다. 닫는 태그가 없는 태그이기 때문 */
-
-
-.main {
+.text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,13 +55,18 @@ transition-duration: 1.5s;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   color: #fff;
   font-family: 'East Sea Dokdo', cursive;
-  z-index: 1;
+  /* z-index: 1; */
+  /* border: 1px solid #fff; */
+  width: 600px;
+  /* height: 500px; */
 }
 
-.main > .start {
+.text>.start {
+  position: fixed;
+  top: 30px;
   margin-top: 5%;
   padding: 0 2rem;
   font-size: 30px;
@@ -70,37 +79,30 @@ transition-duration: 1.5s;
   transition-duration: 1.5s;
 }
 
-/**
-displaynone은 duration이 먹히지 않는 이유!!
- https://velog.io/@dev-tinkerbell/display-none%EC%9D%B4-transition%EC%9D%B4-%EC%95%88%EB%A8%B9%ED%9E%88%EB%8A%94-%EC%9D%B4%EC%9C%A0 */
-
-.main > .start:hover {
+.text>.start:hover {
   background: #fff;
   color: #d32f2f;
   transition-duration: .5s;
 }
 
 .sub-title {
-  position: relative;
+  position: fixed;
   font-size: 40px;
   letter-spacing: 9px;
   display: block;
   height: 6vh;
+  top: -90px;
+  left: auto;
 }
 
 
-.sub-title {
-  position: relative;
-  font-size: 40px;
-  letter-spacing: 9px;
-}
-
-.sub-title::after{
+.sub-title::after {
   content: "";
   display: block;
   position: absolute;
   top: 0;
-  right: -10px; /* 오른쪽에서부터 재니까 마이너스를 붙여줘야한다. */
+  right: -10px;
+  /* 오른쪽에서부터 재니까 마이너스를 붙여줘야한다. */
   width: 3px;
   height: 90%;
   background-color: white;
@@ -111,41 +113,35 @@ displaynone은 duration이 먹히지 않는 이유!!
 }
 
 .title {
-  width: 100%;
-  margin-top: -15px;
+  position: fixed;
+  width: 350px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 1s;
+  margin-top: -10px;
   font-size: 80px;
-  text-shadow: 1px 1px 10px rgba(0,0,0,1);
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 1);
+
+z-index: 3;
+font-family: 'East Sea Dokdo', cursive;
+color: #fff;
 }
+
+
 
 .title_2 {
-color: #d32f2f;
+  color: #d32f2f;
 }
 
-.side_bar {
-  display: block;
-  position: fix;
-  width: 6%;
-  height: auto;
-  transition: all 2s;
-}
 
-.contents {
-  display: block;
-  position: absolute;
-  width: 94%;
-  height: 100%;
-  right: 0;
-  background-color: aqua;
+.side {
+  /* top: 0;
+  left: 0; */
+  /* background-color: #d32f2f; */
+  /* width: auto; */
+  /* height: auto; */
 }
-
-/* 테스트 중 */
-/* body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color:#fff ;
-} */
 
 #menu {
   height: 100%;
@@ -154,10 +150,11 @@ color: #d32f2f;
   width: 300px;
   transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
   transform: translateX(-100%);
+  top: 0;
   left: 60px;
   transition-duration: 2s;
+  z-index: 3;
   opacity: 0;
-  z-index: 1;
 }
 
 #menu.expanded {
@@ -228,4 +225,33 @@ ul li {
   color: #fff;
   font-family: sans-serif;
   padding: 20px 0;
+}
+
+
+
+
+.center {
+  position: relative;
+  background-color: royalblue;
+  left: 50px;
+  width: 96%;
+  height: 100%;
+}
+
+.center .top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background-color: red;
+  z-index: 1;
+}
+
+.center .contents {
+  position: absolute;
+  top: 70px;
+  /* left: 0; */
+  width: 110%;
+  height: 100%;
+  background-color: yellow;
 }

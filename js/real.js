@@ -54,16 +54,18 @@ start.addEventListener('click',() => {
     dynamic();
     blink();
   },0)
-  opening.style.height = '0';
-  // title.style.transform = 'translate(-40vw, 120%) scale(0.5)';
+  opening.style.height = '0'; 
+  title.style.top = '-1%';
+  title.style.left = '-1%';
+  title.style.transform = 'scale(0.5)';
+  // title.style.left = '0';
   body.style.overflowY = 'scroll';
   start.style.transform = 'rotateX(90deg)';
   menu.style.opacity = '1';
+// 
 })
 
 
-
-// 테스트 중입니당
 $(window).load(function(){
   var height = window.innerHeight,
   x= 0, y= height/2,
