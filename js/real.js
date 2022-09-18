@@ -55,9 +55,9 @@ start.addEventListener('click',() => {
     blink();
   },0)
   opening.style.height = '0'; 
-  title.style.top = '-1%';
-  title.style.left = '-1%';
-  title.style.transform = 'scale(0.5)';
+  title.style.top = '-2%';
+  title.style.left = '0%';
+  title.style.transform = 'scale(0.4)';
   // title.style.left = '0';
   body.style.overflowY = 'scroll';
   start.style.transform = 'rotateX(90deg)';
