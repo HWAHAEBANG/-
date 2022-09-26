@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pick : #f0e9e0;
+  --point : #d32f2f;
+  --border : #89867c;
+}
+
+ul li {
+  list-style:none;
+}
+
+
+
+body {
+background: var(--pick);
+overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+  color: var(--border);
+}
+
+.navbar {
+  /* margin-top: 20px; */
+  background: linear-gradient(white 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5));
+  height: 50px;
+  /* overflow: hidden; */
+  /* border: 1px solid #89867c; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  /* align-content: center; 이걸 주면 메뉴가 y축 가운데 정렬 돼요 ㅠㅠ*/
+  padding: 0 20px;
+}
+
+/* .navbar__logo {
+  height: 50px; 안해도 되네..?
+} */
+
+.navbar__logo > i,
+.navbar__logo > a {
+  line-height: 50px;
+}
+
+.navbar__menu {
+  display: flex;
+  width: 600px;
+  /* justify-content: space-around; 1. 이걸하면 안되는 이유가, 메뉴 컨텐츠 길이에 따라 공백너비가 들쭉날쭉 됨. */
+ /* padding: 0; ? */
+}
+
+.navbar__menu > li {
+  line-height: 50px;
+  padding: 0 35px;
+  position: relative;
+}
+
+.navbar__menu > li > ul {
+  width: 100%; /*  2. 이걸 해줘야 너비가 일정하게 되더라고  */
+  display: none;
+  position: absolute; /* 3. 이것도 마찬가지로 이게 없으면, 메뉴 컨텐츠 길이에 따라 공백 너비가 들쭉날쭉 됨 */
+  line-height: 30px;
+}
+
+.navbar__menu > li:hover > ul {
+display: block;
+}
+
+.navbar__menu > li > ul > li {
+  white-space:nowrap;
+  line-height: 40px;
+  /* 속성은 요소 내부의 공백을 처리하는 방법을 설정  : nowrap은 공간제한으로 인한 자동줄바꿈을 허용하지 않는 속성*/
+}
+
+
+.navbar__icons {
+  font-size: 24px; 
+}
+
+.navbar__icons > i {
+  line-height: 50px;
+}
