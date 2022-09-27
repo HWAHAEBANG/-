@@ -4,9 +4,16 @@
 }
 
 :root {
-  --pick : #f0e9e0;
-  --point : #d32f2f;
+  --wfont : #fff;
+  --light : #ff6659;
+  --middel : #d32f2f;
+  --deep : #9a0007;
   --border : #89867c;
+}
+
+
+ul {
+  padding-left: 0;
 }
 
 ul li {
@@ -16,19 +23,21 @@ ul li {
 
 
 body {
-background: var(--pick);
+background: black;
 overflow-y: scroll;
+color: var(--wfont);
+padding-top: 80px;
 }
 
 a {
   text-decoration: none;
-  color: var(--border);
+  color: var(--wfont);
 }
 
 .navbar {
   /* margin-top: 20px; */
-  background: linear-gradient(white 50px, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5));
-  height: 50px;
+  background: linear-gradient(rgba(154, 0, 7, 1) 80px, rgba(154, 0, 7, 0.5) 80px, rgba(154, 0, 7, 0.5));
+  height: 80px;
   /* overflow: hidden; */
   /* border: 1px solid #89867c; */
   position: absolute;
@@ -38,7 +47,9 @@ a {
   display: flex;
   justify-content: space-between;
   /* align-content: center; 이걸 주면 메뉴가 y축 가운데 정렬 돼요 ㅠㅠ*/
-  padding: 0 20px;
+  padding: 0 50px;
+  transition: height .3s;
+  white-space:nowrap;
 }
 
 /* .navbar__logo {
@@ -47,20 +58,51 @@ a {
 
 .navbar__logo > i,
 .navbar__logo > a {
-  line-height: 50px;
+  line-height: 55px;
+  white-space:nowrap;
 }
+
+/* .navbar__logo > i {
+  font-size: 30px; 
+  color: green;
+} */
+
+.navbar__logo > a > span {
+  font-family: 'East Sea Dokdo', cursive;
+  /* font-weight: 700; */
+  font-size: 40px;
+  color: var(--wfont);
+  /* text-shadow: 1px 1px 2px var(--border); */
+}
+
+.navbar__logo > a > span:nth-child(2) {
+  color: var(--light);
+}
+
+.navbar__logo > a > p {
+  font-family: 'Oswald', sans-serif;
+  color: var(--wfont);
+  font-size: 17px;
+  line-height: 1px;
+}
+
 
 .navbar__menu {
   display: flex;
-  width: 600px;
+  width: 700px; /* 이걸 %로 줘버리면 화면이 작아질 때 옆에 요소가 침범하더라고 */
   /* justify-content: space-around; 1. 이걸하면 안되는 이유가, 메뉴 컨텐츠 길이에 따라 공백너비가 들쭉날쭉 됨. */
- /* padding: 0; ? */
+  justify-content: space-around; /* 이걸로 사이 여백으 줘야함. padding으로 주면 반응형 변환시 센터가 안맞음. */
 }
 
 .navbar__menu > li {
-  line-height: 50px;
-  padding: 0 35px;
+  line-height: 80px;
+  padding: 0;
   position: relative;
+  white-space:nowrap;
+}
+
+.navbar__menu > li:hover {
+  color: var(--light);
 }
 
 .navbar__menu > li > ul {
@@ -71,20 +113,97 @@ a {
 }
 
 .navbar__menu > li:hover > ul {
-display: block;
+  display: block;
 }
 
 .navbar__menu > li > ul > li {
   white-space:nowrap;
   line-height: 40px;
+  
   /* 속성은 요소 내부의 공백을 처리하는 방법을 설정  : nowrap은 공간제한으로 인한 자동줄바꿈을 허용하지 않는 속성*/
+}
+
+.navbar__menu > li > ul > li:hover {
+  color: var(--light);
 }
 
 
 .navbar__icons {
+  /* width: 30px; */
   font-size: 24px; 
+  /* white-space:nowrap; */
+  
 }
 
-.navbar__icons > i {
-  line-height: 50px;
+.navbar__icons > a {
+  line-height: 80px;
+  margin-right: 5px;
+}
+
+
+.navbar__toogleBtn {
+  position: absolute;
+  top: 15px;
+  right: 32px;
+  font-size: 32px;
+  display:none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: block;
+    height: 500px;
+    background: var(--deep)
+  }
+
+  .navbar__menu {
+    display : none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .navbar__menu > li{
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar__menu > li > ul{
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .navbar__menu > li:hover > ul {
+    display: flex;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--deep);
+  }
+
+
+  .navbar__icons {
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar__toogleBtn {
+    display: block;
+  }
+
+  .navbar__menu.active,
+  .navbar__icons.active{
+    display: flex;
+  }
+
+  .navbar__icons > a:nth-child(1),
+  .navbar__icons > a:nth-child(2) {
+    line-height: 80px;
+    margin-right: 30px;
+  }
 }
