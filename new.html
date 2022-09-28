@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,62 +10,103 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/c10900428e.js" crossorigin="anonymous"></script>
-  
+
 
   <link rel="stylesheet" href="/css/new.css">
 </head>
+
 <body>
+
+<!-- header -->
   <nav class="navbar">
-    
+
     <div class="navbar__logo">
       <!-- <i class="fa-brands fa-pagelines"></i> -->
-      <a href="#"><span>월급쟁이</span><span> 부자들</span><p>Personal Investment Portfolio</p></a> 
+      <a href="#"><span>월급쟁이</span><span> 부자들</span>
+        <p>Personal Investment Portfolio</p>
+      </a>
     </div>
 
-      <ul class="clearfix navbar__menu">
-        <li> 임장 지도
-          <ul class="submenu">
-            <li><a href="#">2nd menu</a></li>
-            <li><a href="#">2nd menu</a></li>
-          </ul>
-        </li>
-        <li> 지역 분석 보고서
-          <ul class="submenu">
-            <li><a href="#">2nd menu menu</a></li>
-            <li><a href="#">2nd menu</a></li>
-            <li><a href="#">2nd menu</a></li>
-            <li><a href="#">2nd menu</a></li>
-          </ul>
-        </li>
-        <li> 아파트 수익률 보고서
-          <ul class="submenu">
-            <li><a href="#">2nd menu</a></li>
-            <li><a href="#">2nd menu</a></li>
-          </ul>
-        </li> 
-        <li> 보도 / 통계자료
-          <ul class="submenu">
-            <li><a href="#">2nd menu</a></li>
-            <li><a href="#">2nd menu</a></li>
-            <li><a href="#">2nd menu</a></li>
-          </ul>
-        </li>
-      </ul>
+    <ul class="clearfix navbar__menu">
+      <li> 임장 지도
+        <ul class="submenu">
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+        </ul>
+      </li>
+      <li> 지역 분석 보고서
+        <ul class="submenu">
+          <li><a href="#">2nd menu menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+        </ul>
+      </li>
+      <li> 아파트 수익률 보고서
+        <ul class="submenu">
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+        </ul>
+      </li>
+      <li> 보도 / 통계자료
+        <ul class="submenu">
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+          <li><a href="#">2nd menu</a></li>
+        </ul>
+      </li>
+    </ul>
 
     <div class="navbar__icons">
       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="#"><i class="fa-brands fa-instagram"></i></a>
       <a href="#"><i class="fa-brands fa-youtube"></i></a>
-      
+
     </div>
 
     <a href="#" class="navbar__toogleBtn">
       <i class="fa-solid fa-bars"></i>
     </a>
   </nav>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium praesentium deserunt hic in debitis dignissimos nisi aspernatur, esse odit quaerat aliquam reiciendis doloremque aliquid facilis. Similique voluptate in laborum maxime?</p>
+
+<!-- slidshow -->
+<!-- accordion -->
+<!-- lightbox -->
+<!-- tabs -->
+<!-- scroll animation -->
+<!-- upbutton -->
 
 
-<script src="/js/new.js"></script>
+
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium praesentium deserunt hic in debitis
+    dignissimos nisi aspernatur, esse odit quaerat aliquam reiciendis doloremque aliquid facilis. Similique voluptate in
+    laborum maxime?</p>
+
+  <!-- popuup start -->
+  <div class="layerPopup" id="layer_popup" style="visibility: visible;">
+    <div class="layerBox">
+      <h4 class="title">광고</h4>
+      <div class="cont">
+          <img src="/image/popup.jpg"  usemap="#popup" alt="event page">
+      </div>
+      <form name="pop_form">
+        <div id="check"><input type="checkbox" name="chkbox" value="checkbox" id='chkbox'>
+          <label for="chkbox">오늘 하루동안 보지 않기</label></div>
+        <div id="close"><a href="#">닫기</a></div>
+      </form>
+    </div>
+  </div>
+  <!-- popuup end -->
+
+
+  <script src="/js/new.js"></script>
+  <script src="/js/popup.js"></script>
 </body>
+
 </html>
