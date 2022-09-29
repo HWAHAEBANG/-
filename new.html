@@ -74,8 +74,79 @@
     </a>
   </nav>
 
-<!-- slidshow -->
+
+
+
+
+<!-- slideshow -->
+<div class="container">
+  <ul class="slider-container simple-list" id="slider">
+      <li class="slide">
+        <img src="/image/teacher.jpg" alt="slide">
+      </li>
+      <li class="slide">
+        <img src="/image/너바나.png" alt="slide">
+      </li>
+      <li class="slide">
+        <img src="/image/너나위.png" alt="slide">
+      </li>
+      <li class="slide">
+        <img src="/image/주우이, 너바나.png" alt="slide">
+      </li>
+      <li class="slide">
+        <img src="/image/너나위,코크드림.png" alt="slide">
+      </li>
+  </ul>
+
+  <a href="#" id="prev"></a> <!-- 내용이 없다는 건 배경으로 처리하겠다는 의미 -->
+  <a href="#" id="next"></a>
+</div> <!-- end container -->
+
+
+
+
+
+
 <!-- accordion -->
+<div class="accontainer">
+  <div class="title">
+    <h2>F&Q</h2>
+    <button id="btn-collapse"> 모두 닫기 </button>
+  </div>
+ 
+  <section id="faq">
+    <div class="panel-question active">
+      <div class="panel-heading">
+        + 무슨 페이지 입니까?
+      </div>
+      <div class="panel-body" id="thisone">
+        <p> 월부학교 수강생들을 위해 제공되는 개인 부동산 포트폴리오 페이지입니다. </p>
+        <p> 나만의 임장지도, 지역 보고서는 물론, 각종 보도 / 통계자료에 쉽게 접근할 수 있는 환경을 제공합니다.</p>
+      </div>
+    </div>
+    
+    <div class="panel-question">
+      <div class="panel-heading">
+        + 어떤 기능을 제공합니까?
+      </div>
+      <div class="panel-body">
+        <p> 월부학교 수강생들을 위해 제공되는 개인 부동산 포트폴리오 페이지입니다. </p>
+        <p> 나만의 임장지도, 지역 보고서는 물론, 각종 보도 / 통계자료에 쉽게 접근할 수 있는 환경을 제공합니다.</p>
+      </div>
+    </div>
+    
+    <div class="panel-question">
+      <div class="panel-heading">
+        + 유료 수강생만 사용할 수 있습니까?
+      </div>
+      <div class="panel-body">
+        <p> 월부학교 수강생들을 위해 제공되는 개인 부동산 포트폴리오 페이지입니다. </p>
+        <p> 나만의 임장지도, 지역 보고서는 물론, 각종 보도 / 통계자료에 쉽게 접근할 수 있는 환경을 제공합니다.</p>
+      </div>
+    </div>
+  </section>
+  <script src='/main.js'></script>
+</div>
 <!-- lightbox -->
 <!-- tabs -->
 <!-- scroll animation -->
@@ -84,9 +155,6 @@
 
 
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium praesentium deserunt hic in debitis
-    dignissimos nisi aspernatur, esse odit quaerat aliquam reiciendis doloremque aliquid facilis. Similique voluptate in
-    laborum maxime?</p>
 
   <!-- popuup start -->
   <div class="layerPopup" id="layer_popup" style="visibility: visible;">
@@ -104,9 +172,10 @@
   </div>
   <!-- popuup end -->
 
-
+  <script src = "/js/accordion.js"></script>
   <script src="/js/new.js"></script>
   <script src="/js/popup.js"></script>
+  <script src="/js/slideshow.js"></script>
 </body>
 
 </html>

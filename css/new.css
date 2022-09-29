@@ -1,11 +1,13 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
   --wfont : #333;
   --lfont : #fff;
+  --back : #ffdbe3;
   --light : #ff6659;
   --middel : #d32f2f;
   --deep : #9a0007;
@@ -41,7 +43,7 @@ a {
   height: 80px;
   /* overflow: hidden; */
   /* border: 1px solid #89867c; */
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -52,6 +54,7 @@ a {
   transition: height .3s;
   white-space:nowrap;
   color: var(--lfont);
+  z-index: 1;
 }
 
 /* .navbar__logo {
@@ -122,10 +125,15 @@ a {
   white-space:nowrap;
   line-height: 40px;
   
+  
   /* 속성은 요소 내부의 공백을 처리하는 방법을 설정  : nowrap은 공간제한으로 인한 자동줄바꿈을 허용하지 않는 속성*/
 }
 
-.navbar__menu > li > ul > li:hover {
+.navbar__menu > li > ul > li > a{
+  color: var(--lfont);
+}
+
+.navbar__menu > li > ul > li:hover > a {
   color: var(--light);
 }
 
@@ -308,3 +316,142 @@ font-size:16px; font-weight:600; width: 40px; height : 30px;color:black; float: 
 }
 
 /* popuup end */
+
+
+/* slide show start */
+.container {
+  position: relative;
+  width: 100%;	
+  overflow: hidden; /* flex list로 요소를 두면 가로 스크롤이 생기니까 */
+  background: var(--back)
+}
+
+.slider-container {
+  position: absolute; /* container를 기준으로 위치조정 */
+  width:100%; /* 너비도 container 100%d인게지 */
+}
+
+.slide {
+  position: absolute;
+  width: 100%; /* 그 안에서 다시 100% */
+  padding:0 10%; /* 페딩을 조금 주는데 width 100%에 padding 을 주면 사이즈가 커지므로 */
+  box-sizing:border-box; /* 를 주어서 커지지 않게 제어 */
+  top: 50%; /* 슬라이드 안에 내용이 길든 짧든 센터에 위치시키기위해 */
+  transform: translateY(-50%);
+  text-align: center;
+  /* left: 0;
+  transform: translate(-50%, -50%); 생각해봐 이걸 주면 슬라이드가 중간으로 가지..? */
+  overflow: hidden;
+}
+
+.slider-container.animated {
+-webkit-transition: left .3s ease-in; /* legt값이 바뀌는 걸 0.3초의 속도로 초반이 드린 속도의 모델로 보여줌 */
+transition: left .3s ease-in;
+}
+
+.slide > img {
+  width: 700px;
+  border-radius: 30px;
+  box-shadow:  5px 5px 5px rgba(0,0,0,.5);
+}
+
+/* Utility */
+.simple-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav */
+#prev,
+#next {
+  position: absolute; /* 버튼을 각각 left right로 고정시켜버리면, 창 작아지면 참사 */
+  top: 50%; /* 그래서 버튼 두개를 50%로 둘다 센터에 두고, 각각 마진으로 이동시킹 */
+left:50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: inline-block;
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+#prev.disabled, #next.disabled { display:none;}
+
+#prev { background-image: url('/image/arrow-left-out.svg'); margin-left:-480px;}
+
+#prev:hover { background-image: url('/image/arrow-left-over.svg'); }
+
+#next {
+  margin-left:380px; /* prev와 마진이 다른이유? 요소가 100px이니까(둘다 left기준하고 있으니 차야 나는게 당연) */
+  background-image: url('/image/arrow-right-out.svg');
+
+}
+
+#next:hover { background-image: url('/image/arrow-right-over.svg'); }
+
+/* slide show end */
+
+
+
+
+/* accordion */
+
+.accontainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0 40px 0;
+  background : linear-gradient(var(--back), var(--lfont));
+}
+
+.accontainer .title {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.panel-question {
+  width: 90%;
+  margin: 0 auto;
+  /* background: var(--lfont); */
+}
+
+.panel-heading {
+  font-weight: 700;
+  border-top: 1px solid #ff6659;
+  border-bottom: 1px solid #ff6659;
+  margin-top: 20px;
+  background-color: var(--back);
+  color: var(--border);
+  padding: 20px;
+  cursor: pointer;
+}
+
+.panel-heading:hover{
+  background-color: var(--back);
+  color: var(--light);
+  transition-duration: .4s;
+}
+
+
+.panel-body {
+  /* background: var(--lfont); */
+  padding: 15px;
+  color: var(--wfont);
+}
+
+#btn-collapse {
+  /* float: right; */
+  margin-top: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: var(--light);
+  color: var(--lfont);
+  font-weight: 700;
+  cursor: pointer;
+}
