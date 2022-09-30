@@ -18,7 +18,11 @@ function calculateTallestSlide(){
   sliderContainer[0].style.height = topHeight + 50 + 'px';
 }
 
-calculateTallestSlide();
+setTimeout(function(){
+  calculateTallestSlide();
+},100);
+ // 사진이 다 로딩되기전에 높이를 재버려서 사진이 잘리는 버그 발생. 급처방으로 로딩할 시간 조금 주기!
+
 
 // 슬라이드가 있으면 가로로 배열하기
 for(let i = 0; i < slideCount; i++){

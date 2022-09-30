@@ -5,13 +5,13 @@
 }
 
 :root {
-  --wfont : #333;
-  --lfont : #fff;
-  --back : #ffdbe3;
-  --light : #ff6659;
-  --middel : #d32f2f;
-  --deep : #9a0007;
-  --border : #89867c;
+  --wfont: #333;
+  --lfont: #fff;
+  --back: #ffdbe3;
+  --light: #ff6659;
+  --middel: #d32f2f;
+  --deep: #9a0007;
+  --border: #89867c;
 }
 
 
@@ -20,16 +20,16 @@ ul {
 }
 
 ul li {
-  list-style:none;
+  list-style: none;
 }
 
 
 
 body {
-background: var(--lfont);
-overflow-y: scroll;
-color: var(--wfont);
-padding-top: 80px;
+  background: var(--lfont);
+  overflow-y: scroll;
+  color: var(--wfont);
+  padding-top: 80px;
 }
 
 a {
@@ -52,19 +52,19 @@ a {
   /* align-content: center; 이걸 주면 메뉴가 y축 가운데 정렬 돼요 ㅠㅠ*/
   padding: 0 50px;
   transition: height .3s;
-  white-space:nowrap;
+  white-space: nowrap;
   color: var(--lfont);
-  z-index: 1;
+  z-index: 4;
 }
 
 /* .navbar__logo {
   height: 50px; 안해도 되네..?
 } */
 
-.navbar__logo > i,
-.navbar__logo > a {
+.navbar__logo>i,
+.navbar__logo>a {
   line-height: 55px;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 /* .navbar__logo > i {
@@ -72,7 +72,7 @@ a {
   color: green;
 } */
 
-.navbar__logo > a > span {
+.navbar__logo>a>span {
   font-family: 'East Sea Dokdo', cursive;
   /* font-weight: 700; */
   font-size: 40px;
@@ -80,11 +80,11 @@ a {
   /* text-shadow: 1px 1px 2px var(--border); */
 }
 
-.navbar__logo > a > span:nth-child(2) {
+.navbar__logo>a>span:nth-child(2) {
   color: var(--light);
 }
 
-.navbar__logo > a > p {
+.navbar__logo>a>p {
   font-family: 'Oswald', sans-serif;
   color: var(--lfont);
   font-size: 17px;
@@ -94,58 +94,62 @@ a {
 
 .navbar__menu {
   display: flex;
-  width: 700px; /* 이걸 %로 줘버리면 화면이 작아질 때 옆에 요소가 침범하더라고 */
+  width: 700px;
+  /* 이걸 %로 줘버리면 화면이 작아질 때 옆에 요소가 침범하더라고 */
   /* justify-content: space-around; 1. 이걸하면 안되는 이유가, 메뉴 컨텐츠 길이에 따라 공백너비가 들쭉날쭉 됨. */
-  justify-content: space-around; /* 이걸로 사이 여백으 줘야함. padding으로 주면 반응형 변환시 센터가 안맞음. */
+  justify-content: space-around;
+  /* 이걸로 사이 여백으 줘야함. padding으로 주면 반응형 변환시 센터가 안맞음. */
 }
 
-.navbar__menu > li {
+.navbar__menu>li {
   line-height: 80px;
   padding: 0;
   position: relative;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
-.navbar__menu > li:hover {
+.navbar__menu>li:hover {
   color: var(--light);
 }
 
-.navbar__menu > li > ul {
-  width: 100%; /*  2. 이걸 해줘야 너비가 일정하게 되더라고  */
+.navbar__menu>li>ul {
+  width: 100%;
+  /*  2. 이걸 해줘야 너비가 일정하게 되더라고  */
   display: none;
-  position: absolute; /* 3. 이것도 마찬가지로 이게 없으면, 메뉴 컨텐츠 길이에 따라 공백 너비가 들쭉날쭉 됨 */
+  position: absolute;
+  /* 3. 이것도 마찬가지로 이게 없으면, 메뉴 컨텐츠 길이에 따라 공백 너비가 들쭉날쭉 됨 */
   line-height: 30px;
 }
 
-.navbar__menu > li:hover > ul {
+.navbar__menu>li:hover>ul {
   display: block;
 }
 
-.navbar__menu > li > ul > li {
-  white-space:nowrap;
+.navbar__menu>li>ul>li {
+  white-space: nowrap;
   line-height: 40px;
-  
-  
+
+
   /* 속성은 요소 내부의 공백을 처리하는 방법을 설정  : nowrap은 공간제한으로 인한 자동줄바꿈을 허용하지 않는 속성*/
 }
 
-.navbar__menu > li > ul > li > a{
+.navbar__menu>li>ul>li>a {
   color: var(--lfont);
 }
 
-.navbar__menu > li > ul > li:hover > a {
+.navbar__menu>li>ul>li:hover>a {
   color: var(--light);
 }
 
 
 .navbar__icons {
   /* width: 30px; */
-  font-size: 24px; 
+  font-size: 24px;
   /* white-space:nowrap; */
-  
+
 }
 
-.navbar__icons > a {
+.navbar__icons>a {
   line-height: 80px;
   margin-right: 5px;
   color: var(--lfont);
@@ -157,7 +161,7 @@ a {
   top: 15px;
   right: 32px;
   font-size: 32px;
-  display:none;
+  display: none;
 }
 
 
@@ -169,33 +173,33 @@ a {
     background: var(--deep);
     height: 80px;
   }
-  
-  .navbar.active{
+
+  .navbar.active {
     height: 500px;
   }
 
   .navbar__menu {
-    display : none;
+    display: none;
     flex-direction: column;
     text-align: center;
     width: 100%;
     margin-top: 30px;
   }
 
-  .navbar__menu > li{
+  .navbar__menu>li {
     width: 100%;
     text-align: center;
   }
 
 
-  .navbar__menu > li > ul{
+  .navbar__menu>li>ul {
     width: 100%;
     justify-content: space-around;
   }
 
-  .navbar__menu > li:hover > ul {
+  .navbar__menu>li:hover>ul {
     display: flex;
-    top:50%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--deep);
@@ -213,12 +217,12 @@ a {
   }
 
   .navbar__menu.active,
-  .navbar__icons.active{
+  .navbar__icons.active {
     display: flex;
   }
 
-  .navbar__icons > a:nth-child(1),
-  .navbar__icons > a:nth-child(2) {
+  .navbar__icons>a:nth-child(1),
+  .navbar__icons>a:nth-child(2) {
     line-height: 80px;
     margin-right: 30px;
   }
@@ -229,40 +233,40 @@ a {
 
 /* popup start */
 /* font-family: SF Pro KR, SF Pro Display, SF Pro Icons, AOS Icons, Apple Gothic, HY Gulim, MalgunGothic, HY Dotum, Lexi Gulim, Helvetica Neue, Helvetica, Arial, sans-serif; */
-.layerPopup img{
-margin-bottom : 8px;
-width:400px; 
-height:500px;
+.layerPopup img {
+  margin-bottom: 8px;
+  width: 400px;
+  height: 500px;
 }
 
 .layerPopup:before {
-  content:""; 
-  display:block; 
-  position:fixed; 
-  left:0; 
-  top:0; 
-  width:100%; 
-  height:100%; 
-  background:rgba(0,0,0,.5); 
-  z-index:9000
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 9000
 }
 
 .layerPopup .layerBox {
-  z-index:10000;   
-position:fixed; 
-left:25%; 
-top:40%; 
-transform:translate(-50%, -50%); 
-padding:10px; 
-background:#fff; 
-border-radius:6px; 
+  z-index: 10000;
+  position: fixed;
+  left: 25%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background: #fff;
+  border-radius: 6px;
 }
 
 .layerPopup .layerBox .title {
-  margin-bottom:10px; 
-  padding-bottom:10px; 
-  font-weight:600; 
-  border-bottom:1px solid #d9d9d9;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  border-bottom: 1px solid #d9d9d9;
   color: #333;
 }
 
@@ -271,28 +275,29 @@ border-radius:6px;
 }  */
 
 .layerPopup .layerBox .btnTodayHide {
-font-size:14px; 
-font-weight:600; 
-color:black; 
-float: left;
-text-decoration:none;
-width: 150px; 
-height : 30px;
-line-height:30px;
-border:black solid 1px; 
-text-align : center;
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+  float: left;
+  text-decoration: none;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  border: black solid 1px;
+  text-align: center;
 }
 
-.layerPopup div{
-	display : inline;
+.layerPopup div {
+  display: inline;
 }
 
-.layerPopup form{
-	margin : 0px 10px;
-	font-size:16px; font-weight:600;
+.layerPopup form {
+  margin: 0px 10px;
+  font-size: 16px;
+  font-weight: 600;
   width: 95%;
-	height : 30px;
-	line-height:30px;
+  height: 30px;
+  line-height: 30px;
   color: #333;
 }
 
@@ -301,14 +306,22 @@ margin: 100px 0;
 } */
 
 .layerPopup #close {
-font-size:16px; font-weight:600; width: 40px; height : 30px;color:black; float: right; line-height:30px; text-align : center;text-decoration:underline;
+  font-size: 16px;
+  font-weight: 600;
+  width: 40px;
+  height: 30px;
+  color: black;
+  float: right;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: underline;
 }
 
-.layerPopup a{
-	text-decoration : none;
-	color : black;
+.layerPopup a {
+  text-decoration: none;
+  color: black;
   width: 50px;
-  height : 40px;
+  height: 40px;
 }
 
 .layerPopup {
@@ -321,38 +334,46 @@ font-size:16px; font-weight:600; width: 40px; height : 30px;color:black; float: 
 /* slide show start */
 .container {
   position: relative;
-  width: 100%;	
-  overflow: hidden; /* flex list로 요소를 두면 가로 스크롤이 생기니까 */
-  background: var(--back)
+  width: 100%;
+  overflow: hidden;
+  /* flex list로 요소를 두면 가로 스크롤이 생기니까 */
+  background: var(--back);
 }
 
 .slider-container {
-  position: absolute; /* container를 기준으로 위치조정 */
-  width:100%; /* 너비도 container 100%d인게지 */
+  position: absolute;
+  /* container를 기준으로 위치조정 */
+  width: 100%;
+  /* 너비도 container 100%d인게지 */
 }
 
 .slide {
   position: absolute;
-  width: 100%; /* 그 안에서 다시 100% */
-  padding:0 10%; /* 페딩을 조금 주는데 width 100%에 padding 을 주면 사이즈가 커지므로 */
-  box-sizing:border-box; /* 를 주어서 커지지 않게 제어 */
-  top: 50%; /* 슬라이드 안에 내용이 길든 짧든 센터에 위치시키기위해 */
+  width: 100%;
+  /* 그 안에서 다시 100% */
+  padding: 0 10%;
+  /* 페딩을 조금 주는데 width 100%에 padding 을 주면 사이즈가 커지므로 */
+  box-sizing: border-box;
+  /* 를 주어서 커지지 않게 제어 */
+  top: 50%;
+  /* 슬라이드 안에 내용이 길든 짧든 센터에 위치시키기위해 */
   transform: translateY(-50%);
   text-align: center;
   /* left: 0;
   transform: translate(-50%, -50%); 생각해봐 이걸 주면 슬라이드가 중간으로 가지..? */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .slider-container.animated {
--webkit-transition: left .3s ease-in; /* legt값이 바뀌는 걸 0.3초의 속도로 초반이 드린 속도의 모델로 보여줌 */
-transition: left .3s ease-in;
+  -webkit-transition: left .3s ease-in;
+  /* legt값이 바뀌는 걸 0.3초의 속도로 초반이 드린 속도의 모델로 보여줌 */
+  transition: left .3s ease-in;
 }
 
-.slide > img {
+.slide>img {
   width: 700px;
   border-radius: 30px;
-  box-shadow:  5px 5px 5px rgba(0,0,0,.5);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
 }
 
 /* Utility */
@@ -365,11 +386,13 @@ transition: left .3s ease-in;
 /* Nav */
 #prev,
 #next {
-  position: absolute; /* 버튼을 각각 left right로 고정시켜버리면, 창 작아지면 참사 */
-  top: 50%; /* 그래서 버튼 두개를 50%로 둘다 센터에 두고, 각각 마진으로 이동시킹 */
-left:50%;
+  position: absolute;
+  /* 버튼을 각각 left right로 고정시켜버리면, 창 작아지면 참사 */
+  top: 50%;
+  /* 그래서 버튼 두개를 50%로 둘다 센터에 두고, 각각 마진으로 이동시킹 */
+  left: 50%;
   transform: translateY(-50%);
-  z-index: 999;
+  z-index: 2;
   display: inline-block;
   height: 5em;
   width: 5em;
@@ -380,32 +403,43 @@ left:50%;
   transition: all .3s ease-in;
 }
 
-#prev.disabled, #next.disabled { display:none;}
+#prev.disabled,
+#next.disabled {
+  display: none;
+}
 
-#prev { background-image: url('/image/arrow-left-out.svg'); margin-left:-480px;}
+#prev {
+  background-image: url('/image/arrow-left-out.svg');
+  margin-left: -480px;
+}
 
-#prev:hover { background-image: url('/image/arrow-left-over.svg'); }
+#prev:hover {
+  background-image: url('/image/arrow-left-over.svg');
+}
 
 #next {
-  margin-left:380px; /* prev와 마진이 다른이유? 요소가 100px이니까(둘다 left기준하고 있으니 차야 나는게 당연) */
+  margin-left: 400px;
+  /* prev와 마진이 다른이유? 요소가 100px이니까(둘다 left기준하고 있으니 차야 나는게 당연) */
   background-image: url('/image/arrow-right-out.svg');
 
 }
 
-#next:hover { background-image: url('/image/arrow-right-over.svg'); }
+#next:hover {
+  background-image: url('/image/arrow-right-over.svg');
+}
 
 /* slide show end */
 
 
 
 
-/* accordion */
+/* accordion start*/
 
 .accontainer {
   width: 100%;
   margin: 0 auto;
   padding: 20px 0 40px 0;
-  background : linear-gradient(var(--back), var(--lfont));
+  background: linear-gradient(var(--back), var(--lfont));
 }
 
 .accontainer .title {
@@ -432,7 +466,7 @@ left:50%;
   cursor: pointer;
 }
 
-.panel-heading:hover{
+.panel-heading:hover {
   background-color: var(--back);
   color: var(--light);
   transition-duration: .4s;
@@ -455,3 +489,133 @@ left:50%;
   font-weight: 700;
   cursor: pointer;
 }
+
+/* accordion end*/
+
+
+/* tabs start */
+.tab-wrapper {
+  /* background: #d32f2f; */
+  width: 90%;
+  margin: 50px auto;
+}
+
+.tab-menu {
+  display: flex;
+  width: 350px;
+  /* background: #333; */
+}
+
+.tab-menu>li {
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.tab-menu>li>a {
+  padding: 5px 20px;
+  background: var(--light);
+  color: #fff;
+}
+
+.tab-menu>li>a.active {
+  background: #000;
+  color: #fff;
+}
+
+#tab-content>div {
+  display: none;
+}
+
+/* tabs end */
+
+
+/* lightBox start */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery li {
+  float: left;
+  width: 48%;
+  margin: 1%;
+}
+
+.gallery li img {
+  transition: opacity .3s ease-in-out;
+  border-radius: 15px;
+}
+
+.gallery li img:hover {
+  opacity: .75;
+}
+
+#lightbox-overlay {
+  opacity: 0;
+  pointer-events: none;
+  /* 없으면 사진을 클릭할 수 없음 위에 있는 요소가 막고있으니까*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(29, 31, 33, .95);
+  transition: opacity .3s ease-in;
+  z-index: 3;
+}
+
+#lightbox-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lightbox-image {
+  max-height: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  background: transparent url('/image/loading.gif') 50% 50% no-repeat;
+  text-indent: -99999px;
+  border-radius: 30px;
+}
+
+/* lightBox end */
+
+
+/* backtotop start*/
+#back-to-top {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: var(--back);
+  color: #313943;
+  padding: 1em;
+  border-radius: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 0 2em 0 rgba(0, 0, 0, .25);
+  transition: all .2s ease-in-out;
+  opacity: 0;
+}
+
+#back-to-top:hover {
+  background-color: var(--light);
+  color : var(--back);
+  transform: scale(110%);
+}
+
+
+#back-to-top.visible {
+  opacity: 1;
+}
+
+/* backtotop end*/
